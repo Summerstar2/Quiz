@@ -1,46 +1,26 @@
-import time
-Score=0
-print ("Welcome to this Quiz!")
-time.sleep(0.8)
-print ("This quiz will comprise of 5 general questions and will display you score out of 10 at the end.")
-time.sleep(0.8)
-Play=str(input("Do you want to start the quiz? (Yes/No) "))
-if Play=="No":
+import random
+print ("Welcome to the random number generator program!")
+print ("This program will generate as many random numbers as you want with a range of your own choice.")
+Use=str(input("Do you want to use the random number generator (Yes/No) "))
+if Use=="No":
     quit()
-else:
-    print ("The quiz will start in 5..")
-    time.sleep(0.7)
-    print ("4..")
-    time.sleep(0.7)
-    print ("3..")
-    time.sleep(0.7)
-    print ("2..")
-    time.sleep(0.7)
-    print ("1..")
-    time.sleep(0.7)
-    print ("Now!")
-    time.sleep(0.5)
-    print ("Question 1!\nWhat is the capital of India?")
-    Ans1=str(input("Enter your answer - "))
-    if Ans1=="New Delhi" or "new delhi":
-        Score=Score+2
-    print ("Question 2!\nHow many continents are there in the world?")
-    Ans2=int(input("Enter your answer - "))
-    if Ans2==7:
-        Score=Score+2
-    print ("Question 3!\nWhich is the biggest ocean in the world?")
-    Ans3=str(input("Enter your answer - "))
-    if Ans3=="Pacific Ocean" or "pacific ocean" or "Pacific ocean":
-        Score=Score+2
-    print ("Question 4!\nWhich country was Alaska a part of in the 18th century?\nA)USA\nB)Russia\nC)Canada\nD)Denmark")
-    Ans4=str(input("Enter your answer - "))
-    if Ans4=="Russia":
-        Score=Score+2
-    print ("Question 5!\nWho is the current president of Russia?")
-    Ans5=str(input("Enter you answer - "))
-    if Ans5=="Valdmir Putin" or "vladmir putin" or "putin" or "Putin":
-        Score=Score+2
-    time.sleep(0.5)
-    print ("The quiz has now ended and your scores are...")
-    time.sleep(1.0)
-    print ("You scored", Score, "out of 10!")
+if Use=="Yes":
+    U_r=int(input("Enter the upper range - "))
+    U_l=int(input("Enter the lower range - "))
+    Number=random.randint(U_l,U_r)
+    print ("The randomly generated number is ", Number)
+while True:
+    Again=str(input("Do you want to use the program again? (Yes/No) "))
+    if Again=="No":
+        print ("Thanks for using this program!")
+        quit()
+    if Again=="Yes":
+        New_range=str(input("Do you want to enter a new range? (Yes/No) "))
+        if New_range=="No":
+            Number=random.randint(U_l,U_r)
+            print ("The randomly generated number is ",Number)
+        if New_range=="Yes":
+            U_r=int(input("Enter the upper range - "))
+            U_l=int(input("Enter the lower range - "))
+            Number=random.randint(U_l,U_r)
+            print ("The randomly generated number is ",Number)
